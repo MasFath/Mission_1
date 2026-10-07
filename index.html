@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Lab Club — Digital Mission System</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">💻 COMPUTER LAB CLUB</div>
+  <div class="tag">Learn by Doing — Digital Explorer</div>
+</header>
+<main>
+  <section id="view-dashboard" class="view">
+    <div class="hero">
+      <div class="mascot" aria-hidden="true">🤖</div>
+      <div class="hero-level">LEVEL 1</div>
+      <h1>COMPUTER ROOKIE</h1>
+      <p class="slogan">Jelajahi Dunia Komputer,<br>Ciptakan Karyamu.</p>
+      <p class="bubble">Halo, Explorer! Selesaikan misi satu per satu ya. Kamu pasti bisa! 💪</p>
+      <div class="lp">
+        <div class="lp-label">LEVEL PROGRESS</div>
+        <div class="bar"><div id="level-bar" class="bar-fill"></div></div>
+        <div id="level-text" class="lp-text"></div>
+      </div>
+    </div>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section id="view-briefing" class="view" hidden>
+    <div class="panel narrow">
+      <div id="brief-head" class="panel-head"></div>
+      <h2 id="brief-title"></h2>
+      <p class="lead"><b>Tugasmu:</b><br><span id="brief-task"></span></p>
+      <h3>MISSION RULES</h3>
+      <ul class="rules" id="brief-rules"></ul>
+      <p class="note">⚠️ Tetap berada di halaman Mission selama pengerjaan. Kalau kamu pindah tab, pindah jendela, atau keluar fullscreen, akan ada peringatan dan dihitung pelanggaran.</p>
+      <div class="actions">
+        <button id="btn-back-dash" class="btn ghost">← Dashboard</button>
+        <button id="btn-start" class="btn primary">🚀 SIAP, MULAI MISSION</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-mission" class="view" hidden>
+    <div class="hud">
+      <div class="hud-title"><span id="hud-mission"></span></div>
+      <div class="hud-box"><span class="hud-k">WAKTU</span><span id="hud-time" class="mono">15:00</span></div>
+      <div class="hud-box" id="hud-viol-box"><span class="hud-k">PELANGGARAN</span><span id="hud-viol" class="mono">0 / 3</span></div>
+    </div>
+    <div class="panel q-panel">
+      <div class="q-top"><span id="q-count"></span><span id="q-bar-text" class="mono"></span></div>
+      <div class="bar"><div id="q-bar" class="bar-fill"></div></div>
+      <div id="q-nav" class="qnav" aria-label="Pilih nomor soal"></div>
+      <div class="q-sub"><span>💡 Kamu boleh ganti jawaban dan pindah soal kapan saja.</span><span id="q-answered"></span></div>
+      <h2 id="q-text" class="q-text"></h2>
+      <div id="q-options" class="options" role="radiogroup" aria-labelledby="q-text"></div>
+      <div class="actions">
+        <button id="btn-prev" class="btn ghost">← SEBELUMNYA</button>
+        <button id="btn-next" class="btn primary">LANJUT</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-result" class="view" hidden>
+    <div id="result" class="panel narrow result"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal" hidden role="alertdialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box" id="modal-box">
+    <h2 id="modal-title"></h2>
+    <p id="modal-body"></p>
+    <div class="modal-actions"><button id="modal-btn" class="btn primary"></button><button id="modal-btn2" class="btn ghost" hidden></button></div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden role="status"></div>
+
+<script src="missions/mission-01.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
